@@ -1,6 +1,6 @@
 <?php
 
-include("auth.php"); //include auth.php file on all secure pages
+require("auth.php"); //include auth.php file on all secure pages
 require('db.php');
 
 $email = $_SESSION['email'];
