@@ -10,6 +10,4 @@ $stm_select = $pdo->prepare('SELECT * FROM `users` WHERE email = :email');
 $stm_select->execute(['email' => $email]);
 $result = $stm_select->fetchAll(PDO::FETCH_ASSOC);
 
-//JSON_UNESCAPED_UNICODE används för att kunna skriva ut åäö.
-echo json_encode($result, JSON_UNESCAPED_UNICODE);
-?>
+echo json_encode($result);
