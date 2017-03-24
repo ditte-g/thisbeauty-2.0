@@ -8,13 +8,8 @@ $email = $_SESSION['email'];
 //Visar användarinformation på mina sidor
 $stm_select = $pdo->prepare('SELECT * FROM `users` WHERE email = :email');
 $stm_select->execute(['email' => $email]);
-$resultat = array();
-
-foreach($stm_select as $row) {
-    $resultat[] = $row;
-
-}
+$result = $stm_select->fetchAll(PDO::FETCH_ASSOC);
 
 //JSON_UNESCAPED_UNICODE används för att kunna skriva ut åäö.
-echo json_encode($resultat, JSON_UNESCAPED_UNICODE);
+echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
