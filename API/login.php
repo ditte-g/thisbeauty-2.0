@@ -18,7 +18,7 @@ session_start();
 	
 	if( $qty > 0 ) {
 		$_SESSION['email'] = $email;
-		header("Location: index.php");
+		echo json_encode(true);
 	}
 	else {
 		echo json_encode(false);
