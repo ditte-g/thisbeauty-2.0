@@ -10,4 +10,5 @@ $stm_select = $pdo->prepare('SELECT * FROM `users` WHERE email = :email');
 $stm_select->execute(['email' => $email]);
 $result = $stm_select->fetchAll(PDO::FETCH_ASSOC);
 
+header("Content-Type: application/json;charset=utf-8");
 echo json_encode($result);
