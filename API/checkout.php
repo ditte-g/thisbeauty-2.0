@@ -1,7 +1,7 @@
 <?php
 
 require("db.php");
-include("auth.php");
+require("auth.php");
 
 $email = $_SESSION['email']; //sparar den e-post som användaren är inloggad på
 $datetime = date("Y-m-d H:i:s"); //Datum i datetime-format
