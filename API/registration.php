@@ -16,14 +16,14 @@ if (isset($_POST['ffirstname'], $_POST['flastname'], $_POST['fpassword'], $_POST
     $country = $_POST['fcountry'];
 
     // kolla om användaren finns i databasen genom att räkna antal rader i databastabellen där e-postadressen finns
-    $sql = "SELECT COUNT(*) AS 'antal_rader' FROM `users`WHERE email = :email";
+    $sql = "SELECT COUNT(*) AS 'qty' FROM `users`WHERE email = :email";
     $stm_count = $pdo->prepare($sql);
     $stm_count->execute(['email' => $_POST['femail']]);
     foreach ($stm_count as $row) {
-        $antal_rader = $row['antal_rader'];
+        $qty = $row['qty'];
     }
 
-    if ($antal_rader > 0) {
+    if ($qty > 0) {
         header("Content-Type: application/json;charset=utf-8");
         echo json_encode(false);
 
