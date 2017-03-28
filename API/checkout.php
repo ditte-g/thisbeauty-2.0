@@ -15,5 +15,6 @@ if( isset($_POST['submit']) ) {
         $stm_insert->execute();
     }
 unset($_SESSION['cart']); //Tar bort produkterna i varukorgen efter slutfört köp
+header("Content-Type: application/json;charset=utf-8");
 echo json_encode(true);
 }
