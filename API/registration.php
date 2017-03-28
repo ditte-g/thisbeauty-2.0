@@ -24,7 +24,7 @@ if (isset($_POST['ffirstname'], $_POST['flastname'], $_POST['fpassword'], $_POST
     }
 
     if ($antal_rader > 0) {
-
+        header("Content-Type: application/json;charset=utf-8");
         echo json_encode(false);
 
     } else {
