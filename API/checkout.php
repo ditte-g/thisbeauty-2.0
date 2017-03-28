@@ -17,14 +17,3 @@ if( isset($_POST['submit']) ) {
 unset($_SESSION['cart']); //Tar bort produkterna i varukorgen efter slutfört köp
 echo json_encode(true);
 }
-
-//echo json_encode($_SESSION['cart']);
-?>
-<!--
-		<form action="#" method="post">
-		<button type="submit" name="submit">Köp</button>
-		</form>
-
-        -->
-
-        
