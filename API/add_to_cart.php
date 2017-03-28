@@ -14,7 +14,7 @@ if (isset ($_GET['id'])) {
 		} else {
 			$_SESSION['cart'] = array( [ "item"=>$row, "quantity"=>1] ); //Om varukorgen är tom så skapas en array
             }
-
+		header("Content-Type: application/json;charset=utf-8");
 		echo json_encode($_SESSION['cart']);	
 	}
 }
